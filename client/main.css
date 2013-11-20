@@ -1,0 +1,57 @@
+/* CSS declarations go here */
+
+.main {
+    background: #eef;
+    border-radius: 0px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+body { 
+    background: #88e; /*maybe #abe*/
+    color: #222;
+    font-family: "Helvetica", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+}
+
+.landing {
+	text-align: center;
+} .superloud{
+	font-size: 200px;
+	padding-top: 100px;
+}
+
+.header {
+	text-align: center;
+	float: center;
+
+} .header .theme {
+	font-size: 68px;
+	border-radius: 25px;
+	background: #fff;
+	max-width: 800px;
+	/*float: center;*/
+	align: center;
+	padding: 10px;
+	margin: 20px;
+	opacity: 0.7;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.footer {
+	height: 30px;
+	width: 765px;
+	background: #fff;
+	-webkit-border-top-left-radius: 25px;
+    -webkit-border-top-right-radius: 25px;
+    -moz-border-radius-topleft: 25px;
+    -moz-border-radius-topright: 25px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    z-index: +10;
+    padding: 1em;
+} .footer span{
+	margin-right: 50px;
+	margin-left: 50px;
+}

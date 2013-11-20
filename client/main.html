@@ -1,0 +1,50 @@
+<head>
+  <title>Is Kenton Having a LAN party?</title>
+</head>
+
+<body>
+  {{> layout}}
+</body>
+
+<template name="layout">
+  {{> header}}
+  <p>_</p>
+  <p>_</p>
+  <p>_</p>
+  <p>_</p>
+  <p>_</p>
+  <p>_</p>
+  <p>_</p>
+  <p>_</p>
+  <p>_</p>
+  <p>_</p>
+  <p>_</p>
+  {{> footer}}
+</template>
+
+<template name="landingpage">
+	<div class='landing'>
+	  <p><div class='superloud'>YES</div></p>
+	  <p><input type="button" value="Log in to Register"></input></p>
+	  <!-- <p>{{loginButtons}}</p> -->
+	  <a href="{{path for 'register'}}">Continue without logging in</a>
+	</div>
+</template>
+
+
+<template name="header">
+	<div class="header">
+		<center>
+		<div class="theme">Upcoming LAN parties</div>
+		</center>
+	</div>
+</template>
+
+<template name="footer">
+<center>
+	<div class="footer">
+		<span>About Kenton's House</span>
+		<span>LAN Party FAQ</span>
+	</div>
+</center>
+</template>
