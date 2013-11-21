@@ -4,7 +4,8 @@
     "basePackages": {
       "iron-router": {},
       "bootstrap-3": {},
-      "ionicons": {}
+      "ionicons": {},
+      "bootstrap-datepicker2": {}
     },
     "packages": {
       "iron-router": {
@@ -21,6 +22,11 @@
         "git": "https://github.com/Pagebakers/meteor-ionicons.git",
         "tag": "v1.3.3",
         "commit": "782f9b99b098bfd1f82f36f9142e70cbbcc7e7e3"
+      },
+      "bootstrap-datepicker2": {
+        "git": "https://github.com/deepwell/meteor-bootstrap-datepicker.git",
+        "tag": "v1.2.0",
+        "commit": "b7de18a7cc651ea665cda75048663f90d1a11d10"
       }
     }
   }
