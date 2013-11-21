@@ -1,29 +1,43 @@
 // subscriptions to Events collection
 Meteor.subscribe('events');
 
-//////////Add
+///////////////////TODO///////////////////
+
+// Before internet:
+// event page
+// fix/balance main photo in photoshop
+
+// With internet:
+// commit
+// ionicon correct usage
+// date-picker
+// admin view
+
+
 ///////////////////Iron-Router///////////////////
-// Router.configure({
-//   layoutTemplate: 'layout',
-// });
+Router.configure({
+  layoutTemplate: 'layout',
+});
 
 
-// Router.map(function () {
+Router.map(function () {
 
-//   // the home page is the front page; with trending apps
-//   this.route('home', {
-//     path: '/', // match the root path
-//     template: 'landingpage'
-//   });
+  // the home page is "Yes" or "No page"
+  this.route('home', {
+    path: '/', // match the root path
+    template: 'landingpage'
+  });
 
-//   this.route('register', {
-//     path: '/register', // match the root path
-//     template: 'register'
-//   });
+  // the registration form
+  this.route('register', {
+    path: '/register', // match the root path
+    template: 'registration'
+  });
 
-//   this.route('eventpage', {
-//     path: '/event',
-//     template: 'eventpage'
-//   });
+  // the page with the roster, etc., also, admin page
+  this.route('eventpage', {
+    path: '/event',
+    template: 'eventpage'
+  });
 
-// });
+});

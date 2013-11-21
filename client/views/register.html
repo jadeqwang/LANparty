@@ -1,0 +1,149 @@
+<template name="registration">
+  {{> header}}
+  <center>
+    <div class="register-container">
+      {{> register}}
+    </div>
+  </center>
+
+  {{> footer}}
+</template>
+
+
+
+
+<template name="register">
+  <form class="form-horizontal">
+  <fieldset>
+
+  <!-- Form Name -->
+  <legend>Registration</legend>
+
+  <!-- Your Name is definitely-->
+  <div class="form-group required-control">
+    <label class="col-md-2 control-label" for="guestname"></label>
+    <div class="col-md-3">
+      <input id="guestname" name="guestname" type="text" placeholder="Your Name" class="form-control " required="">
+    </div>
+    <div class="col-md-1">
+       <label class="col-md-1 control-label" for="probability">is</label> 
+     </div>
+     <div class="col-md-4">
+      <select id="probability" name="probability" class="form-control ">
+        <option>definitely</option>
+        <option>probably</option>
+        <option>maybe</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Attending to Play Games -->
+
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="attending"></label>
+    <div class="col-md-3">
+      <select id="attending" name="attending" class="form-control ">
+        <option>attending</option>
+        <option>dropping by</option>
+      </select>
+    </div>
+    <div class="col-md-1">
+      <label class="col-md-1 control-label" for="playing">to</label>
+    </div>
+    <div class="col-md-4">
+      <select id="playing" name="playing" class="form-control ">
+        <option>play games.</option>
+        <option>just hang out/watch.</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="spacer">
+  </div>
+
+  <!-- Show me on the Roster -->
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="visible"></label>
+    <label class="col-md-4 control-label" for="visible">Show me on the roster?</label>
+    <div class="col-md-4">
+      <select id="visible" name="visible" class="form-control ">
+        <option>Only to approved guests</option>
+        <option>Yes, to everyone</option>
+        <option>Only to Kenton</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="spacer">
+  </div>
+
+  <!-- I can contribute -->
+  <div class="form-group">
+    <label class="col-md-1 control-label" for="visible"></label>
+    <label class="col-md-4 control-label" for="contribution"> (Optional) I will contribute</label>
+    <div class="col-lg-5" style="align:left">
+      <div class="checkbox">
+      <label for="contribution-0">
+        <input type="checkbox" name="contribution" id="contribution-0" value="snacks">
+        snacks
+      </label>
+      </div>
+      
+      <div class="checkbox">
+      <label for="contribution-1">
+        <input type="checkbox" name="contribution" id="contribution-1" value="beverages">
+        beverages
+      </label>
+      </div>
+      
+      <div class="checkbox">
+      <label for="contribution-2">
+        <input type="checkbox" name="contribution" id="contribution-2" value="alcohol (of the !beer variety)">
+        alcohol (of the !beer variety)
+      </label>
+      </div>
+      
+      <div class="checkbox">
+      <label for="contribution-3">
+        <input type="checkbox" name="contribution" id="contribution-3" value="beer (if you drink it yourself)">
+        beer (if you drink it yourself)
+      </label>
+      </div>
+      
+      <div class="checkbox">
+      <label for="contribution-4">
+        <input type="checkbox" name="contribution" id="contribution-4" value="$10">
+        $10
+      </label>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="spacer">
+  </div>
+
+  <!-- Comments -->
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="visible"></label>
+    <label class="col-md-2 control-label" for="comments">Comments</label>
+    <div class="col-md-6">
+      <textarea id="comments" name="comments" class="form-control " rows="3" placeholder="(e.g., game requests) Comments will appear under your name on the roster."></textarea>
+    </div>
+  </div>
+
+ <div class="spacer">
+  </div>
+
+  <!-- Register Button -->
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="visible"></label>
+    <div class="col-md-8">
+      <button type="button" class="btn btn-success btn-lg btn-block">Register</button>
+    </div>
+  </div>
+
+  </fieldset>
+  </form>
+
+</template>

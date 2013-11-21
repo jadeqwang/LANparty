@@ -9,10 +9,13 @@
 }
 
 body { 
-    background: #88e; /*maybe #abe*/
+    /*background: #88e; /*maybe #abe*/
+    /*background: #689;*/
+    background: #607587;
     color: #222;
-    font-family: "Helvetica", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 100;
+    letter-spacing: 3px;
 }
 
 .landing {
@@ -25,24 +28,47 @@ body {
 .header {
 	text-align: center;
 	float: center;
+	background-image: url('/IMG_20111204_122722 (1).jpg');
+	min-height: 300px;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
 
 } .header .theme {
 	font-size: 68px;
 	border-radius: 25px;
 	background: #fff;
 	max-width: 800px;
-	/*float: center;*/
 	align: center;
 	padding: 10px;
-	margin: 20px;
 	opacity: 0.7;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+} 
+
+.spacer{
+	opacity: 0;
+	min-height: 20px;
+}
+
+.button {
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+.checkbox {
+	text-align: left;
+}
+.register-container{
+	max-width: 765px;
+	margin: 50px;
+	background-color: #e0d5c5;
+	border-radius: 25px;
+	padding: 25px 10px 25px 10px;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
 }
 
 .footer {
-	height: 30px;
+	font-size: 18px;
 	width: 765px;
-	background: #fff;
+	margin-top: 35px;
+	background-color: #e0d5c5;
 	-webkit-border-top-left-radius: 25px;
     -webkit-border-top-right-radius: 25px;
     -moz-border-radius-topleft: 25px;
