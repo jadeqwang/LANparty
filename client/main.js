@@ -10,7 +10,7 @@ Meteor.subscribe('events');
 // With internet:
 // commit
 // ionicon correct usage
-// date-picker
+// date-picker (search atmosphere)
 // admin view
 
 
