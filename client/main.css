@@ -80,6 +80,7 @@ html {
 }
 .register-container{
 	max-width: 765px;
+	min-height: 330px;
 	margin: 50px;
 	background-color: #e0d5c5;
 	border-radius: 25px;
@@ -88,6 +89,11 @@ html {
 } /*.legend{
 	border-bottom-color: #607587;
 }*/
+
+.gcalbutton{
+	padding-left: 115px;
+	padding-bottom: 20px;
+}
 .leftcolumn{
 	max-width: 50%;
 	float: left;
@@ -104,7 +110,7 @@ html {
 
 .footer {
 	font-size: 18px;
-	width: 765px;
+	max-width: 765px;
 	margin-top: 35px;
 	background-color: #e0d5c5;
 	-webkit-border-top-left-radius: 25px;
