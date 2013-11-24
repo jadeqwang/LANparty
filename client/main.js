@@ -1,6 +1,10 @@
 // subscriptions to Events collection
 Meteor.subscribe('events');
 
+Template.header.rendered=function() {
+    $('.datepicker').datepicker();
+}
+
 ///////////////////TODO///////////////////
 
 // Before internet:

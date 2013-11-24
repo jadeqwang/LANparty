@@ -18,6 +18,14 @@ body {
     letter-spacing: 3px;
 }
 
+html { 
+    /*background: url('/IMG_20111204_122722 (1).jpg') no-repeat center center fixed; */
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
 .landing {
 	text-align: center;
 } .superloud{
@@ -29,8 +37,17 @@ body {
 	text-align: center;
 	float: center;
 	background-image: url('/IMG_20111204_122722 (1).jpg');
+	background-position-y: center;
+	background-position-x: left;
+	-webkit-background-size: 132% 350%;
 	min-height: 300px;
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+    /*position:fixed; */
+    /*top:-50%; */
+    /*left:-50%; */
+    /*width:50%; */
+    /*height:50%;*/
+
 
 } .header .theme {
 	font-size: 68px;
