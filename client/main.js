@@ -4,6 +4,10 @@ Meteor.subscribe('events');
 Template.header.rendered=function() {
     $('.datepicker').datepicker();
 }
+// console.log("event rendered");
+//   $('#when').datepicker();
+//   $('#when').datepicker("option", "dateFormat", "yy-mm-dd" );
+
 
 ///////////////////TODO///////////////////
 
