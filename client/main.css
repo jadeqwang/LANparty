@@ -12,6 +12,7 @@ body {
     /*background: #88e; /*maybe #abe*/
     /*background: #689;*/
     background: #607587;
+    /*background: #fff;*/
     color: #222;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 100;
@@ -26,11 +27,17 @@ html {
     -o-background-size: cover;
 }
 
-.landing {
+.landing{
 	text-align: center;
+	background-color: #fff;
+	margin: -10;
+	height: 800px;
 } .superloud{
 	font-size: 200px;
+	font-weight: 300;
 	padding-top: 100px;
+} .landing body{
+	background-color: #fff;
 }
 
 .header {
