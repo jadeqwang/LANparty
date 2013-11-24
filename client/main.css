@@ -40,6 +40,10 @@ html {
 	background-position-y: center;
 	background-position-x: left;
 	-webkit-background-size: 132% 350%;
+	-moz-background-size: 132% 350%;
+	-ms-background-size: 132% 350%;
+	-o-background-size: 132% 350%;
+	background-size: 132% 350%;
 	min-height: 300px;
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
     /*position:fixed; */
