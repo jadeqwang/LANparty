@@ -11,10 +11,11 @@
 	  <p><div class='superloud'>YES</div></p>
 	  <!-- <p><input type="button" value="Log in to Register"></input></p> -->
 	  <p>{{loginButtons}}</p>
-	  <a href="{{path for 'register'}}">Continue without logging in</a>
-	  <div class="spacer"></div>
-		<div class="spacer"></div>
-		<div class="spacer"></div>
+	  {{#if currentUser}}
+	  	<a href="{{pathFor 'register'}}" class="btn btn-primary btn-lg active">Register</a>
+	  {{else}}
+	  	<a href="{{pathFor 'register'}}">Continue without logging in</a>
+	  {{/if}}
 	</div>
 </template>
 

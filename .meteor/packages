@@ -8,7 +8,6 @@ autopublish
 insecure
 preserve-inputs
 accounts-ui
-accounts-google
 accounts-github
 spiderable
 iron-router
