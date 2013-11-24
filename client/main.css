@@ -83,8 +83,23 @@ html {
 	margin: 50px;
 	background-color: #e0d5c5;
 	border-radius: 25px;
-	padding: 100px 10px 100px 10px;
+	padding: 30px 10px 30px 10px;
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+} /*.legend{
+	border-bottom-color: #607587;
+}*/
+.leftcolumn{
+	max-width: 50%;
+	float: left;
+	text-align: left;
+	margin: 10px;
+	max-height: 100%;
+}
+.rightcolumn{
+	/*max-width: 50%;*/
+	/*float: right;*/
+	text-align: left;
+	margin: 10px;
 }
 
 .footer {
