@@ -2,7 +2,8 @@
   {{> header}}
   <center>
     <div class="register-container">
-      {{> event}}
+      {{> modalparent}}
+      <!-- {{> event}} -->
     </div>
   </center>
 
@@ -70,6 +71,9 @@
 		<div class="spacer"></div>
 			<div class="col-md-5">
 				<ul>
+					<li>
+
+					</li>
 					<li>Name 1</li>
 					<li>Longer Name 2</li>
 					<li>Much much much much longer Name 3</li>
@@ -84,3 +88,31 @@
 	</div>
 
 </template>
+
+<template name="myModal">      
+    <!-- this is the backdrop fully shown from the beginning -->
+    <div class="modal-backdrop fade in"></div>
+    <!-- css ".show" class == modal fully shown -->
+    <div class="modal show">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form class="form-horizontal">
+                        <button type="button" class="close" aria-hidden>x</button>
+                    <div class="modal-body">
+                        {{> register}}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</template>
+
+
+<template name="modalparent">
+    {{#if showMyModal}}
+        {{> myModal}}
+    {{/if}}
+    <button class="show-modal-button btn-success">Add me</button>
+</template>
+
+
