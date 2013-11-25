@@ -30,8 +30,9 @@ html {
 .landing{
 	text-align: center;
 	background-color: #fff;
-	margin: -10;
-	height: 800px;
+	background-position-y: center;
+	background-position-x: left;
+	height: 1080px;
 } .superloud{
 	font-size: 200px;
 	font-weight: 300;
@@ -87,7 +88,7 @@ html {
 }
 .register-container{
 	max-width: 765px;
-	min-height: 330px;
+	min-height: 440px;
 	margin: 50px;
 	background-color: #e0d5c5;
 	border-radius: 25px;
