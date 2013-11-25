@@ -97,6 +97,10 @@ html {
 	padding-left: 60px;
 	padding-bottom: 20px;
 }
+.show-modal-button{
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
 .leftcolumn{
 	max-width: 50%;
 	float: left;
