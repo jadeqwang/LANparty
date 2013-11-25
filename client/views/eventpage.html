@@ -21,7 +21,7 @@
 <template name="eventdetails">
 	<div class="leftcolumn">
 		<div class="row">
-			<div class="gcalbutton"><button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-calendar"> Add to Google Calendar</button></div>
+			<div class="gcalbutton"><button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-calendar"></span> Add to Google Calendar</button></div>
 			<div class="spacer"></div>
 		</div>
 		<div class="row">
@@ -110,6 +110,7 @@
     {{#if showMyModal}}
         {{> myModal}}
     {{/if}}
+    <div class="spacer"></div>
     <button class="show-modal-button btn btn-success btn-lg">Add me <span class="glyphicon glyphicon-pencil"></span></button>
 </template>
 
