@@ -5,7 +5,7 @@ Meteor.subscribe('events');
 //     $('.datepicker').datepicker();
 // }
 
-// Session.setDefault('event-id', getFirstEventId);
+Session.setDefault('event-id', getFirstEventId);
 // for some reason, trying to set a default sets off a type error when
 // the same line works for Session.set. Worry about this later.
 
@@ -15,13 +15,13 @@ Meteor.subscribe('events');
 
 // had trouble with Session.setDefault, so we're setting it early
 // on the landing page
-Template.landingpage.rendered = function(){
-  Session.set('event-id', Events.findOne()._id);
-}
-// here too, in case they didn't come via the landing page
-Template.header.rendered = function(){
-  Session.set('event-id', Events.findOne()._id);
-}
+// Template.landingpage.rendered = function(){
+//   Session.set('event-id', Events.findOne()._id);
+// }
+// // here too, in case they didn't come via the landing page
+// Template.header.rendered = function(){
+//   Session.set('event-id', Events.findOne()._id);
+// }
 
 Template.header.helpers({
   eventTheme: function(){
