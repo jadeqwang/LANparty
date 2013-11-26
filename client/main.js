@@ -19,9 +19,10 @@ Template.landingpage.rendered = function(){
   Session.set('event-id', Events.findOne()._id);
 }
 // here too, in case they didn't come via the landing page
-Template.header.rendered = function(){
-  Session.set('event-id', Events.findOne()._id);
-}
+// actually, no, it'll prevent the nextbtn from working b/c it keeps resetting
+// Template.header.rendered = function(){
+//   Session.set('event-id', Events.findOne()._id);
+// }
 
 Template.header.helpers({
   eventTheme: function(){
