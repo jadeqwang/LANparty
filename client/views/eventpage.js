@@ -1,3 +1,36 @@
+
+Template.eventlist.helpers({
+	events: function(){
+		return Events.find({});
+	},
+	eventTheme: function(){
+		return this.theme;
+	},
+	eventDate: function(){
+		return this.date;
+	},
+	rsvps: function(){
+		return this.users.length;
+	},
+	users: function(){
+		myusers = this.users;
+		console.log(myusers);
+		// return this.users;
+	},
+	userId: function(){
+		return this.userId;
+	},
+	// username: function(){
+	// 	myuser = Meteor.users.find({_id: this.userId});
+	// 	// console.log(myuser);
+	// 	return myuser.profile.name;
+	// }
+});
+
+
+
+/////////////Registration Modal////////////////////
+
 Template.myModal.events({
     "click .close, click .cancel":function(){
         Session.set("showMyModal",false);

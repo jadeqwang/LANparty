@@ -4,8 +4,11 @@ Template.register.events({
 
 		//build the registration from its parts
 		var $comments = $(e.target).find(['name=comments']);
+
+		//Events.update(eventId, {blah blah});
+		//insert the user into the event
 	}
-})
+});
 
 Template.register.helpers({
 	yourname: function() {
@@ -13,4 +16,4 @@ Template.register.helpers({
 		console.log(user.profile.name);
 		return user.profile.name;
 	}
-})
+});

@@ -16,6 +16,19 @@
 
 {{> roster}}
 
+{{> eventlist}}
+
+</template>
+
+<template name="eventlist">
+
+{{#each events}}
+	<p>Theme: {{eventTheme}}</p>
+	<p>Date: {{eventDate}}</p>
+	<p>RSVPs: {{rsvps}}</p>
+		{{users}}
+{{/each}}
+
 </template>
 
 <template name="eventdetails">
