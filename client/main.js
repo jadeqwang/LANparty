@@ -5,14 +5,29 @@ Meteor.subscribe('events');
 //     $('.datepicker').datepicker();
 // }
 
-// Session.setDefault('eventId', null);
+// Session.setDefault('event-id', Events.findOne()._id);
+// for some reason, trying to set a default sets off a type error when
+// the same line works for Session.set. Worry about this later.
+
 // by default, you're looking at the first event
 // when done with testing, fix to next upcoming event (from 'now')
 
+
+Template.header.rendered = function(){
+  // console.log(Events.findOne());
+  // myevent = Events.findOne();
+  Session.set('event-id', Events.findOne()._id);
+  // myeventid = Session.get('event-id');
+  // console.log(myeventid);
+}
+
 Template.header.helpers({
   events: function(){
-    // console.log(Events.findOne({}));
-    // return Events.findOne({});
+    // console.log(Events.findOne());
+    // myevent = Events.findOne();
+    // Session.set('event-id', Events.findOne()._id);
+    myeventid = Session.get('event-id');
+    console.log(myeventid);
     return Events.find({});
   },
   eventTheme: function(){
