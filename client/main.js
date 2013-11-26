@@ -14,11 +14,7 @@ Meteor.subscribe('events');
 
 
 Template.header.rendered = function(){
-  // console.log(Events.findOne());
-  // myevent = Events.findOne();
   Session.set('event-id', Events.findOne()._id);
-  // myeventid = Session.get('event-id');
-  // console.log(myeventid);
 }
 
 Template.header.helpers({
@@ -26,20 +22,34 @@ Template.header.helpers({
     // console.log(Events.findOne());
     // myevent = Events.findOne();
     // Session.set('event-id', Events.findOne()._id);
-    myeventid = Session.get('event-id');
-    console.log(myeventid);
+    // myeventid = Session.get('event-id');
+    // console.log(myeventid);
     return Events.find({});
   },
   eventTheme: function(){
-    return this.theme;
+    return getEvent().theme;
   },
   eventDate: function(){
-    var mydate = new Date(this.date);
+    // myevent = getEvent();
+    var mydate = new Date(getEvent().date);
     console.log(mydate);
     return mydate.toDateString();
     // return mydate.format('dddd, MMMM ,yyyy');
   },
+  myTheme: function(){
+    // myeventid = Session.get('event-id');
+    // console.log(myeventid);
+    // myevent = Events.findOne({_id: myeventid});
+    myevent = getEvent();
+    console.log(myevent);
+    return getEvent().theme;
+  },
 });
+
+function getEvent(){
+    return Events.findOne({_id: Session.get('event-id')});
+}
+
 // console.log("event rendered");
 //   $('#when').datepicker();
 //   $('#when').datepicker("option", "dateFormat", "yy-mm-dd" );
