@@ -52,15 +52,24 @@ Template.header.events({
   'click .nextbtn': function(e){
     e.preventDefault();
     console.log('nextbtn');
+    // currentEvent = getEvent();
+    // console.log(currentEvent);
+    // console.log(currentEvent.date);
+    nextEvent = Events.findOne({date: {$gt: getEvent().date}},['date', "asc"]);
+    console.log(nextEvent);
+    Session.set('event-id',nextEvent._id);
+  }
+});
+
+Template.header.events({
+  'click .prevbtn': function(e){
+    e.preventDefault();
     currentEvent = getEvent();
     console.log(currentEvent);
     console.log(currentEvent.date);
-    nextEvent = Events.findOne({date: {$gt: currentEvent.date}},['date', "asc"]);
-    console.log(nextEvent);
-    // futureEvents = Events.find({$gt: {date: currentEvent.date}});
-    // futureEvents = Events.find({$gt: {date: currentEvent.date}}, ['date', "asc"]);
-    // console.log(futureEvents);
-    Session.set('event-id',nextEvent._id);
+    prevEvent = Events.findOne({date: {$lt: currentEvent.date}},['date', "asc"]);
+    console.log(prevEvent);
+    Session.set('event-id',prevEvent._id);
   }
 });
 
