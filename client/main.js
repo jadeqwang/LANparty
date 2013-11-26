@@ -12,6 +12,8 @@ Meteor.subscribe('events');
 //     [your name] is [definitely] [attending].
 // admin view
 // add to google calendar
+// remove autopublish+insecure
+// flesh out allow/deny rules
 // add 2-4 events ahead; ability for admin to edit;
 
 // nice to haves:
