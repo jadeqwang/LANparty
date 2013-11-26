@@ -81,6 +81,10 @@ html {
 .checkbox {
 	text-align: left;
 }
+
+.invisible {
+	opacity: 0;
+}
 .register-container{
 	max-width: 765px;
 	min-height: 440px;

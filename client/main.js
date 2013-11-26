@@ -33,6 +33,17 @@ Template.header.helpers({
     console.log(mydate);
     return mydate.toDateString();
   },
+  isDisabledPrev: function(){
+    //
+  },
+  isDisabledNext: function(){
+    //returns "disabled" if it's the last event
+    if (getNextEvent() === undefined) {
+      return "invisible";
+    } else{
+      return '';
+    };
+  }
 });
 
 function getEvent(){ //gets the event from the session variable
@@ -43,6 +54,10 @@ function getFirstEventId(){ //gets the event from the session variable
     return Events.findOne()._id;
 }
 
+function getNextEvent(){
+  return Events.findOne({date: {$gt: getEvent().date}},['date', "asc"]);
+}
+
 //sort specifier ["a", "asc"]
 //collection.find(selector, [options])
 //selector is mongo query, $gt is greater than
@@ -51,11 +66,7 @@ function getFirstEventId(){ //gets the event from the session variable
 Template.header.events({
   'click .nextbtn': function(e){
     e.preventDefault();
-    console.log('nextbtn');
-    // currentEvent = getEvent();
-    // console.log(currentEvent);
-    // console.log(currentEvent.date);
-    nextEvent = Events.findOne({date: {$gt: getEvent().date}},['date', "asc"]);
+    nextEvent = getNextEvent();
     console.log(nextEvent);
     Session.set('event-id',nextEvent._id);
   }
@@ -67,7 +78,7 @@ Template.header.events({
     currentEvent = getEvent();
     console.log(currentEvent);
     console.log(currentEvent.date);
-    prevEvent = Events.findOne({date: {$lt: currentEvent.date}},['date', "asc"]);
+    prevEvent = Events.findOne({date: {$lt: currentEvent.date}},['date', "desc"]);
     console.log(prevEvent);
     Session.set('event-id',prevEvent._id);
   }
