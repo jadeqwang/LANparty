@@ -7,7 +7,10 @@ Template.eventlist.helpers({
 		return this.theme;
 	},
 	eventDate: function(){
-		return this.date;
+		// mydate = this.date;
+		var mydate = new Date(this.date);
+		return mydate.toDateString();
+		// return mydate.format('dddd, MMMM ,yyyy');
 	},
 	rsvps: function(){
 		return this.users.length;
