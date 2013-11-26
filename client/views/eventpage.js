@@ -1,10 +1,19 @@
+Template.eventdetails.helpers({
+	eventTheme: function(){
+	console.log(myEvent());
+	console.log(myEvent().theme);
+	return myEvent().theme;
+	},
+})
 
 Template.eventlist.helpers({
 	events: function(){
 		return Events.find({});
 	},
 	eventTheme: function(){
-		return this.theme;
+		console.log(myEvent());
+		console.log(myEvent().theme);
+		return myEvent().theme;
 	},
 	eventDate: function(){
 		// mydate = this.date;
@@ -17,7 +26,7 @@ Template.eventlist.helpers({
 	},
 	users: function(){
 		myusers = this.users;
-		console.log(myusers);
+		// console.log(myusers);
 		// return this.users;
 	},
 	userId: function(){
@@ -30,7 +39,9 @@ Template.eventlist.helpers({
 	// }
 });
 
-
+// function getEvent(){ //gets the event from the session variable
+//     return Events.findOne({_id: Session.get('event-id')});
+// }
 
 /////////////Registration Modal////////////////////
 

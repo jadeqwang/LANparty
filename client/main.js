@@ -20,16 +20,20 @@ Template.landingpage.rendered = function(){
 }
 // here too, in case they didn't come via the landing page
 // actually, no, it'll prevent the nextbtn from working b/c it keeps resetting
-// Template.header.rendered = function(){
-//   Session.set('event-id', Events.findOne()._id);
-// }
+Template.header.rendered = function(){ 
+  if (typeof Session.get('event-id') != 'string') {
+    Session.set('event-id', Events.findOne()._id);
+  };
+}
 
 Template.header.helpers({
   eventTheme: function(){
-    return getEvent().theme;
+    return myEvent().theme;
   },
   eventDate: function(){
-    var mydate = new Date(getEvent().date);
+    // thisevent = getEvent();
+    console.log(myEvent());
+    var mydate = new Date(myEvent().date);
     return mydate.toDateString();
   },
   isDisabledPrev: function(){//hides prevbtn if last event
@@ -44,7 +48,8 @@ Template.header.helpers({
   }
 });
 
-function getEvent(){ //gets the event from the session variable
+myEvent = function(){ //gets the event from the session variable
+    console.log(Session.get('event-id'));
     return Events.findOne({_id: Session.get('event-id')});
 }
 
@@ -53,11 +58,11 @@ function getFirstEventId(){ //gets the event from the session variable
 }
 
 function getNextEvent(){
-  return Events.findOne({date: {$gt: getEvent().date}},{sort:{date: 1}});
+  return Events.findOne({date: {$gt: myEvent().date}},{sort:{date: 1}});
 }
 
 function getPrevEvent(){
-  return Events.findOne({date: {$lt: getEvent().date}},{sort:{date: -1}});
+  return Events.findOne({date: {$lt: myEvent().date}},{sort:{date: -1}});
 }
 
 Template.header.events({
@@ -83,6 +88,7 @@ Template.header.events({
 
 // Xdate in header
 // Xheader sets session variable for active event
+
 // iterate to display users for active event
 // admin view
 
