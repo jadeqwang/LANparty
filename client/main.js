@@ -54,11 +54,11 @@ function getFirstEventId(){ //gets the event from the session variable
 }
 
 function getNextEvent(){
-  return Events.findOne({date: {$gt: getEvent().date}},['date', "asc"]);
+  return Events.findOne({date: {$gt: getEvent().date}},{sort:{date: 1}});
 }
 
 function getPrevEvent(){
-  return Events.findOne({date: {$lt: getEvent().date}},['date', "desc"]);
+  return Events.findOne({date: {$lt: getEvent().date}},{sort:{date: -1}});
 }
 
 //sort specifier ["a", "asc"]
