@@ -30,7 +30,6 @@ Template.header.helpers({
   },
   eventDate: function(){
     var mydate = new Date(getEvent().date);
-    console.log(mydate);
     return mydate.toDateString();
   },
   isDisabledPrev: function(){//hides prevbtn if last event
@@ -61,15 +60,9 @@ function getPrevEvent(){
   return Events.findOne({date: {$lt: getEvent().date}},{sort:{date: -1}});
 }
 
-//sort specifier ["a", "asc"]
-//collection.find(selector, [options])
-//selector is mongo query, $gt is greater than
-
-
 Template.header.events({
   'click .nextbtn': function(e){
     e.preventDefault();
-    // nextEvent = getNextEvent();
     Session.set('event-id',getNextEvent()._id);
   }
 });
@@ -77,8 +70,6 @@ Template.header.events({
 Template.header.events({
   'click .prevbtn': function(e){
     e.preventDefault();
-    // prevEvent = getPrevEvent();
-    // console.log(prevEvent);
     Session.set('event-id',getPrevEvent()._id);
   }
 });
@@ -90,9 +81,8 @@ Template.header.events({
 
 ///////////////////TODO///////////////////
 
-// With internet:
-// date in header
-// header sets session variable for active event
+// Xdate in header
+// Xheader sets session variable for active event
 // iterate to display users for active event
 // admin view
 
