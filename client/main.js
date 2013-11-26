@@ -5,7 +5,7 @@ Meteor.subscribe('events');
 //     $('.datepicker').datepicker();
 // }
 
-// Session.setDefault('event-id', Events.findOne()._id);
+// Session.setDefault('event-id', getFirstEventId);
 // for some reason, trying to set a default sets off a type error when
 // the same line works for Session.set. Worry about this later.
 
@@ -13,6 +13,12 @@ Meteor.subscribe('events');
 // when done with testing, fix to next upcoming event (from 'now')
 
 
+// had trouble with Session.setDefault, so we're setting it early
+// on the landing page
+Template.landingpage.rendered = function(){
+  Session.set('event-id', Events.findOne()._id);
+}
+// here too, in case they didn't come via the landing page
 Template.header.rendered = function(){
   Session.set('event-id', Events.findOne()._id);
 }
@@ -32,6 +38,10 @@ function getEvent(){ //gets the event from the session variable
     return Events.findOne({_id: Session.get('event-id')});
 }
 
+function getFirstEventId(){ //gets the event from the session variable
+    return Events.findOne()._id;
+}
+
 //sort specifier ["a", "asc"]
 //collection.find(selector, [options])
 //selector is mongo query, $gt is greater than
@@ -41,8 +51,12 @@ Template.header.events({
   'click .nextbtn': function(e){
     e.preventDefault();
     console.log('nextbtn');
-    // currentEvent = getEvent();
-    // console.log(currentEvent);
+    currentEvent = getEvent();
+    console.log(currentEvent);
+    // console.log(currentEvent.date);
+    // someEvent = Events.find({date: currentEvent.date});
+    // console.log(someEvent);
+    // futureEvents = Events.find({$gt: {date: currentEvent.date}});
     // futureEvents = Events.find({$gt: {date: currentEvent.date}}, ['date', "asc"]);
     // console.log(futureEvents);
     //Session.set
