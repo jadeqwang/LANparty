@@ -5,7 +5,7 @@ Meteor.subscribe('events');
 //     $('.datepicker').datepicker();
 // }
 
-// Session.setDefault('event-id', getFirstEventId);
+Session.setDefault('event-id', getFirstEventId);
 // for some reason, trying to set a default sets off a type error when
 // the same line works for Session.set. Worry about this later.
 
@@ -33,15 +33,14 @@ Template.header.helpers({
     console.log(mydate);
     return mydate.toDateString();
   },
-  isDisabledPrev: function(){
-    //
+  isDisabledPrev: function(){//hides prevbtn if last event
+    if (getPrevEvent() === undefined) {
+      return "invisible";
+    };
   },
-  isDisabledNext: function(){
-    //returns "disabled" if it's the last event
+  isDisabledNext: function(){//hides nextbtn if last event
     if (getNextEvent() === undefined) {
       return "invisible";
-    } else{
-      return '';
     };
   }
 });
@@ -58,6 +57,10 @@ function getNextEvent(){
   return Events.findOne({date: {$gt: getEvent().date}},['date', "asc"]);
 }
 
+function getPrevEvent(){
+  return Events.findOne({date: {$lt: getEvent().date}},['date', "desc"]);
+}
+
 //sort specifier ["a", "asc"]
 //collection.find(selector, [options])
 //selector is mongo query, $gt is greater than
@@ -67,7 +70,6 @@ Template.header.events({
   'click .nextbtn': function(e){
     e.preventDefault();
     nextEvent = getNextEvent();
-    console.log(nextEvent);
     Session.set('event-id',nextEvent._id);
   }
 });
@@ -75,10 +77,7 @@ Template.header.events({
 Template.header.events({
   'click .prevbtn': function(e){
     e.preventDefault();
-    currentEvent = getEvent();
-    console.log(currentEvent);
-    console.log(currentEvent.date);
-    prevEvent = Events.findOne({date: {$lt: currentEvent.date}},['date', "desc"]);
+    prevEvent = getPrevEvent();
     console.log(prevEvent);
     Session.set('event-id',prevEvent._id);
   }
