@@ -1,6 +1,27 @@
 // subscriptions to Events collection
 Meteor.subscribe('events');
 
+
+///////////////////TODO///////////////////
+
+// create new template for ind'l user
+// iterate to display users for active event
+//  -> create collection from Meteor.users.find
+// "add me" insert users into Event
+// registration fix: 
+//     [your name] is [definitely] [attending].
+// admin view
+// add to google calendar
+// add 2-4 events ahead; ability for admin to edit;
+
+// nice to haves:
+// change ionicons to glyphicons to avoid console error message
+// datepicker
+// accounts-google
+// gcal integration to add events
+
+
+
 // Template.header.rendered=function() {
 //     $('.datepicker').datepicker();
 // }
@@ -31,9 +52,6 @@ Template.header.helpers({
     return myEvent().theme;
   },
   eventDate: function(){
-    // thisevent = getEvent();
-    // console.log(myEvent());
-    // var mydate = new Date(myEvent().date);
     return myDate();
   },
   isDisabledPrev: function(){//hides prevbtn if last event
@@ -49,14 +67,14 @@ Template.header.helpers({
 });
 
 myEvent = function(){ //gets the event from the session variable
-    console.log(Session.get('event-id'));
+    // console.log(Session.get('event-id'));
     return Events.findOne({_id: Session.get('event-id')});
 }
+
 myDate = function(){
   var mydate = new Date(myEvent().date);
   return mydate.toDateString();
 }
-
 
 function getFirstEventId(){ //gets the event from the session variable
     return Events.findOne()._id;
@@ -88,14 +106,6 @@ Template.header.events({
 //   $('#when').datepicker();
 //   $('#when').datepicker("option", "dateFormat", "yy-mm-dd" );
 
-
-///////////////////TODO///////////////////
-
-// Xdate in header
-// Xheader sets session variable for active event
-
-// iterate to display users for active event
-// admin view
 
 
 ///////////////////Iron-Router///////////////////
