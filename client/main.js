@@ -32,12 +32,22 @@ function getEvent(){ //gets the event from the session variable
     return Events.findOne({_id: Session.get('event-id')});
 }
 
-// Template.header.events({
-//   'click .nextbtn': function(e){
-//     e.preventDefault();
-//     Session.set
-//   }
-// });
+//sort specifier ["a", "asc"]
+//collection.find(selector, [options])
+//selector is mongo query, $gt is greater than
+
+
+Template.header.events({
+  'click .nextbtn': function(e){
+    e.preventDefault();
+    console.log('nextbtn');
+    // currentEvent = getEvent();
+    // console.log(currentEvent);
+    // futureEvents = Events.find({$gt: {date: currentEvent.date}}, ['date', "asc"]);
+    // console.log(futureEvents);
+    //Session.set
+  }
+});
 
 // console.log("event rendered");
 //   $('#when').datepicker();
