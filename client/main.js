@@ -32,9 +32,9 @@ Template.header.helpers({
   },
   eventDate: function(){
     // thisevent = getEvent();
-    console.log(myEvent());
-    var mydate = new Date(myEvent().date);
-    return mydate.toDateString();
+    // console.log(myEvent());
+    // var mydate = new Date(myEvent().date);
+    return myDate();
   },
   isDisabledPrev: function(){//hides prevbtn if last event
     if (getPrevEvent() === undefined) {
@@ -52,6 +52,11 @@ myEvent = function(){ //gets the event from the session variable
     console.log(Session.get('event-id'));
     return Events.findOne({_id: Session.get('event-id')});
 }
+myDate = function(){
+  var mydate = new Date(myEvent().date);
+  return mydate.toDateString();
+}
+
 
 function getFirstEventId(){ //gets the event from the session variable
     return Events.findOne()._id;

@@ -23,7 +23,6 @@
 <template name="eventlist">
 
 {{#each events}}
-	<p>Theme: {{eventTheme}}</p>
 	<p>Date: {{eventDate}}</p>
 	<p>RSVPs: {{rsvps}}</p>
 		{{users}}
@@ -46,7 +45,8 @@
 			<label class="col-md-2">Time</label>
 			</div>
 			<div class="col-md-8">
-				noon to midnight
+				noon to midnight,<br>
+				{{eventDate}}</br>
 			</div>
 		</div>
 		<div class="spacer"></div>

@@ -1,19 +1,15 @@
 Template.eventdetails.helpers({
 	eventTheme: function(){
-	console.log(myEvent());
-	console.log(myEvent().theme);
-	return myEvent().theme;
+		return myEvent().theme;
+	},
+	eventDate: function(){
+		return myDate();
 	},
 })
 
 Template.eventlist.helpers({
 	events: function(){
 		return Events.find({});
-	},
-	eventTheme: function(){
-		console.log(myEvent());
-		console.log(myEvent().theme);
-		return myEvent().theme;
 	},
 	eventDate: function(){
 		// mydate = this.date;
@@ -26,7 +22,7 @@ Template.eventlist.helpers({
 	},
 	users: function(){
 		myusers = this.users;
-		// console.log(myusers);
+		console.log(myusers);
 		// return this.users;
 	},
 	userId: function(){
