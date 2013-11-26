@@ -69,17 +69,17 @@ function getPrevEvent(){
 Template.header.events({
   'click .nextbtn': function(e){
     e.preventDefault();
-    nextEvent = getNextEvent();
-    Session.set('event-id',nextEvent._id);
+    // nextEvent = getNextEvent();
+    Session.set('event-id',getNextEvent()._id);
   }
 });
 
 Template.header.events({
   'click .prevbtn': function(e){
     e.preventDefault();
-    prevEvent = getPrevEvent();
-    console.log(prevEvent);
-    Session.set('event-id',prevEvent._id);
+    // prevEvent = getPrevEvent();
+    // console.log(prevEvent);
+    Session.set('event-id',getPrevEvent()._id);
   }
 });
 
