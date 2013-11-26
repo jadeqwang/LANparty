@@ -18,37 +18,26 @@ Template.header.rendered = function(){
 }
 
 Template.header.helpers({
-  events: function(){
-    // console.log(Events.findOne());
-    // myevent = Events.findOne();
-    // Session.set('event-id', Events.findOne()._id);
-    // myeventid = Session.get('event-id');
-    // console.log(myeventid);
-    return Events.find({});
-  },
   eventTheme: function(){
     return getEvent().theme;
   },
   eventDate: function(){
-    // myevent = getEvent();
     var mydate = new Date(getEvent().date);
     console.log(mydate);
     return mydate.toDateString();
-    // return mydate.format('dddd, MMMM ,yyyy');
-  },
-  myTheme: function(){
-    // myeventid = Session.get('event-id');
-    // console.log(myeventid);
-    // myevent = Events.findOne({_id: myeventid});
-    myevent = getEvent();
-    console.log(myevent);
-    return getEvent().theme;
   },
 });
 
-function getEvent(){
+function getEvent(){ //gets the event from the session variable
     return Events.findOne({_id: Session.get('event-id')});
 }
+
+// Template.header.events({
+//   'click .nextbtn': function(e){
+//     e.preventDefault();
+//     Session.set
+//   }
+// });
 
 // console.log("event rendered");
 //   $('#when').datepicker();
