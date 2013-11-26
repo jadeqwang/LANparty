@@ -1,9 +1,30 @@
 // subscriptions to Events collection
 Meteor.subscribe('events');
 
-Template.header.rendered=function() {
-    $('.datepicker').datepicker();
-}
+// Template.header.rendered=function() {
+//     $('.datepicker').datepicker();
+// }
+
+// Session.setDefault('eventId', null);
+// by default, you're looking at the first event
+// when done with testing, fix to next upcoming event (from 'now')
+
+Template.header.helpers({
+  events: function(){
+    // console.log(Events.findOne({}));
+    // return Events.findOne({});
+    return Events.find({});
+  },
+  eventTheme: function(){
+    return this.theme;
+  },
+  eventDate: function(){
+    var mydate = new Date(this.date);
+    console.log(mydate);
+    return mydate.toDateString();
+    // return mydate.format('dddd, MMMM ,yyyy');
+  },
+});
 // console.log("event rendered");
 //   $('#when').datepicker();
 //   $('#when').datepicker("option", "dateFormat", "yy-mm-dd" );
@@ -11,14 +32,10 @@ Template.header.rendered=function() {
 
 ///////////////////TODO///////////////////
 
-// Before internet:
-// event page
-// fix/balance main photo in photoshop
-
 // With internet:
-// commit
-// ionicon correct usage
-// date-picker (search atmosphere)
+// date in header
+// header sets session variable for active event
+// iterate to display users for active event
 // admin view
 
 
