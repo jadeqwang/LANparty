@@ -4,12 +4,16 @@ Meteor.subscribe('events');
 
 ///////////////////TODO///////////////////
 
+// done: 
+// X add to google calendar
+
 // create new template for ind'l user
 // iterate to display users for active event
 //  -> create collection from Meteor.users.find
 // "add me" insert users into Event
 // admin view
-// add to google calendar
+// Session.setDefault -- figure out what's going wrong there
+
 // remove autopublish+insecure
 // flesh out allow/deny rules
 // add 2-4 events ahead; ability for admin to edit;
