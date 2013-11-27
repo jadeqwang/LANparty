@@ -16,19 +16,8 @@
 
 {{> roster}}
 
-<!-- {{> eventlist}} -->
-
 </template>
 
-<template name="eventlist">
-
-{{#each events}}
-	<p>Date: {{eventDate}}</p>
-	<p>RSVPs: {{rsvps}}</p>
-		{{users}}
-{{/each}}
-
-</template>
 
 <template name="eventdetails">
 	<div class="leftcolumn">
@@ -87,7 +76,7 @@
 		<div class="spacer"></div>
 			<div class="col-md-5">
 				<ul>
-					<li>Name 1</li>
+					<li>Name 1 {{users}}</li>
 					<li>Longer Name 2</li>
 					<li>Much much much much longer Name 3</li>
 				</ul>
@@ -97,6 +86,15 @@
 		<div class="spacer"></div>
 	</div>
 </template>
+
+<template name="rsvpItem"> 
+	<li>
+		<span class="rosternames">{{myName}}</span>
+		<span class="contributions">{{myContributions}}</span>
+		<p class="myComment">{{myComment}}</p>
+	</li>
+</template>
+
 
 <template name="myModal">      
     <!-- this is the backdrop fully shown from the beginning -->

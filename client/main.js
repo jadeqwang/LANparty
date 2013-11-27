@@ -13,6 +13,8 @@ Meteor.subscribe('events');
 // "add me" insert users into Event
 // admin view
 // Session.setDefault -- figure out what's going wrong there
+// modal doesn't work in firefox
+// make gcal correct event (depend on session)
 
 // remove autopublish+insecure
 // flesh out allow/deny rules

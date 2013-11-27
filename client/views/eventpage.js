@@ -7,33 +7,47 @@ Template.eventdetails.helpers({
 	},
 })
 
-Template.eventlist.helpers({
-	events: function(){
-		return Events.find({});
-	},
-	eventDate: function(){
-		// mydate = this.date;
-		var mydate = new Date(this.date);
-		return mydate.toDateString();
-		// return mydate.format('dddd, MMMM ,yyyy');
-	},
+Template.roster.helpers({
 	rsvps: function(){
-		return this.users.length;
+		return myEvent().users.length;
 	},
 	users: function(){
-		myusers = this.users;
+		myusers = myEvent().users;
 		console.log(myusers);
 		// return this.users;
 	},
 	userId: function(){
 		return this.userId;
 	},
-	// username: function(){
-	// 	myuser = Meteor.users.find({_id: this.userId});
-	// 	// console.log(myuser);
-	// 	return myuser.profile.name;
-	// }
-});
+})
+
+// Template.eventlist.helpers({
+// 	events: function(){
+// 		return Events.find({});
+// 	},
+// 	eventDate: function(){
+// 		// mydate = this.date;
+// 		var mydate = new Date(this.date);
+// 		return mydate.toDateString();
+// 		// return mydate.format('dddd, MMMM ,yyyy');
+// 	},
+// 	rsvps: function(){
+// 		return this.users.length;
+// 	},
+// 	users: function(){
+// 		myusers = this.users;
+// 		console.log(myusers);
+// 		// return this.users;
+// 	},
+// 	userId: function(){
+// 		return this.userId;
+// 	},
+// 	// username: function(){
+// 	// 	myuser = Meteor.users.find({_id: this.userId});
+// 	// 	// console.log(myuser);
+// 	// 	return myuser.profile.name;
+// 	// }
+// });
 
 // function getEvent(){ //gets the event from the session variable
 //     return Events.findOne({_id: Session.get('event-id')});

@@ -116,6 +116,9 @@ html {
 	text-align: left;
 	margin: 10px;
 }
+.rosternames{
+	font-weight: 300;
+}
 
 .footer {
 	font-size: 18px;
