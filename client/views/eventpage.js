@@ -32,6 +32,20 @@ function getUserIds(myusers){
 		return myuserIds;
 }
 
+Template.rsvpItem.helpers({
+	myName: function(){
+		// return this.userId;
+		console.log(this);
+		return this.profile.name;
+	},
+	myContributions: function(){
+		//
+	},
+	myComment: function(){
+		//
+	}
+})
+
 //mongo selector
 //// Matches documents where fruit is one of three possibilities
 //{fruit: {$in: ["peach", "plum", "pear"]}}

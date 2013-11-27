@@ -34,7 +34,7 @@
 		<div class="spacer"></div>
 		<div class="row">
 			<div class="col-md-3">
-			<label class="col-md-2">Time</label>
+				<label class="col-md-3">Time</label>
 			</div>
 			<div class="col-md-8">
 				noon to midnight,<br>
@@ -44,7 +44,7 @@
 		<div class="spacer"></div>
 		<div class="row">
 			<div class="col-md-3">
-			<label class="col-md-2">Theme</label>
+				<label class="col-md-3">Theme</label>
 			</div>
 			<div class="col-md-8">
 				{{eventTheme}}
@@ -53,9 +53,12 @@
 		<div class="spacer"></div>
 		<div class="row">
 			<div class="col-md-3">
-			<label class="col-md-2">Address</label>
+				<label class="col-md-3">Location</label>
 			</div>
-			<div class="col-md-6">
+		</div>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-8">
 				475 Fernando Ave.
 				Palo Alto, CA 94306
 			</div>
@@ -76,11 +79,8 @@
 		<div class="spacer"></div>
 			<div class="col-md-5">
 				<ul>{{#each users}}
-						<li>{{userId}}</li>
+						<li>{{> rsvpItem}}</li>
 					{{/each}}
-					<li>Name 1</li>
-					<li>Longer Name 2</li>
-					<li>Much much much much longer Name 3</li>
 				</ul>
 			</div>
 		<div class="spacer"></div>
