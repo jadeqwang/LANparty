@@ -19,57 +19,42 @@
 <template name="register">
   <form class="form-horizontal">
   <fieldset>
-
+    
   <!-- Form Name -->
   <legend>Registration</legend>
 
   <!-- Your Name is definitely-->
   <div class="form-group required-control">
-    <label class="col-md-2 control-label" for="guestname"></label>
+    <label class="col-md-1 control-label"></label>
     <div class="col-md-3">
       <input id="guestname" name="guestname" type="text" placeholder="Your Name" class="form-control " required="" value="{{yourname}}">
     </div>
-    <div class="col-md-1">
+    <div>
        <label class="col-md-1 control-label" for="probability">is</label> 
      </div>
-     <div class="col-md-4">
+     <div class="col-md-3">
       <select id="probability" name="probability" class="form-control ">
         <option>definitely</option>
         <option>probably</option>
         <option>maybe</option>
       </select>
     </div>
-  </div>
-
-  <!-- Attending to Play Games -->
-
-  <div class="form-group">
-    <label class="col-md-2 control-label" for="attending"></label>
     <div class="col-md-3">
       <select id="attending" name="attending" class="form-control ">
-        <option>attending</option>
-        <option>dropping by</option>
-      </select>
-    </div>
-    <div class="col-md-1">
-      <label class="col-md-1 control-label" for="playing">to</label>
-    </div>
-    <div class="col-md-4">
-      <select id="playing" name="playing" class="form-control ">
-        <option>play games.</option>
-        <option>just hang out/watch.</option>
+        <option>attending.</option>
+        <option>dropping by.</option>
       </select>
     </div>
   </div>
 
-  <div class="spacer">
-  </div>
+
+  <div class="spacer"></div>
 
   <!-- Show me on the Roster -->
   <div class="form-group">
-    <label class="col-md-2 control-label" for="visible"></label>
-    <label class="col-md-4 control-label" for="visible">Show me on the roster?</label>
-    <div class="col-md-4">
+    <label class="col-md-1 control-label" for="visible"></label>
+    <label class="col-md-5 control-label" for="visible">Show me on roster?</label>
+    <div class="col-md-5">
       <select id="visible" name="visible" class="form-control ">
         <option>Only to approved guests</option>
         <option>Yes, to everyone</option>
@@ -129,10 +114,12 @@
 
   <!-- Comments -->
   <div class="form-group">
-    <label class="col-md-2 control-label" for="visible"></label>
-    <label class="col-md-2 control-label" for="comments">Comments</label>
-    <div class="col-md-6">
-      <textarea id="comments" name="comments" class="form-control " rows="3" placeholder="(e.g., game requests) Comments will appear under your name on the roster."></textarea>
+    <label class="col-md-1 control-label" for="visible"></label>
+    <div class="col-md-3">
+      <label class="col-md-3 control-label" for="comments">Comments</label>
+    </div>
+    <div class="col-md-7">
+      <textarea id="comments" name="comments" class="form-control " rows="4" placeholder="(e.g., game requests) Comments will appear under your name on the roster."></textarea>
     </div>
   </div>
 

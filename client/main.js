@@ -8,7 +8,7 @@ Meteor.subscribe('events');
 // iterate to display users for active event
 //  -> create collection from Meteor.users.find
 // "add me" insert users into Event
-// registration fix: 
+// X registration fix: 
 //     [your name] is [definitely] [attending].
 // admin view
 // add to google calendar
