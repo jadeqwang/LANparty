@@ -12,13 +12,9 @@ Template.roster.helpers({
 		return myEvent().users.length;
 	},
 	users: function(){
-		myuserIds = getUserIds(myEvent().users);
-		// myusers = Meteor.users.find({_id: {$in: myuserIds}});
-		myusers = Meteor.users.find({_id: myuserIds});
+		myusers = Meteor.users.find({_id: {$in: getUserIds(myEvent().users)}},{multi: true});
 		console.log(myusers);
-		return myusers;
-
-		// return this.users;
+		return Meteor.users.find({_id: {$in: getUserIds(myEvent().users)}},{multi: true});
 	},
 	userId: function(){
 		// return this.userId;
