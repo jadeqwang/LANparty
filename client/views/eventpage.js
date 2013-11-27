@@ -12,46 +12,35 @@ Template.roster.helpers({
 		return myEvent().users.length;
 	},
 	users: function(){
-		myusers = myEvent().users;
+		myuserIds = getUserIds(myEvent().users);
+		// myusers = Meteor.users.find({_id: {$in: myuserIds}});
+		myusers = Meteor.users.find({_id: myuserIds});
 		console.log(myusers);
+		return myusers;
+
 		// return this.users;
 	},
 	userId: function(){
-		return this.userId;
+		// return this.userId;
+		console.log(this);
+		return this.profile.name;
 	},
 })
 
-// Template.eventlist.helpers({
-// 	events: function(){
-// 		return Events.find({});
-// 	},
-// 	eventDate: function(){
-// 		// mydate = this.date;
-// 		var mydate = new Date(this.date);
-// 		return mydate.toDateString();
-// 		// return mydate.format('dddd, MMMM ,yyyy');
-// 	},
-// 	rsvps: function(){
-// 		return this.users.length;
-// 	},
-// 	users: function(){
-// 		myusers = this.users;
-// 		console.log(myusers);
-// 		// return this.users;
-// 	},
-// 	userId: function(){
-// 		return this.userId;
-// 	},
-// 	// username: function(){
-// 	// 	myuser = Meteor.users.find({_id: this.userId});
-// 	// 	// console.log(myuser);
-// 	// 	return myuser.profile.name;
-// 	// }
-// });
+function getUserIds(myusers){
+	var myuserIds = new Array();
+		for(var x = 0; x < myusers.length; x++){
+			myuserIds[x] = myusers[x].userId;
+		}
+		console.log(myuserIds);
+		return myuserIds;
+}
 
-// function getEvent(){ //gets the event from the session variable
-//     return Events.findOne({_id: Session.get('event-id')});
-// }
+//mongo selector
+//// Matches documents where fruit is one of three possibilities
+//{fruit: {$in: ["peach", "plum", "pear"]}}
+
+
 
 /////////////Registration Modal////////////////////
 

@@ -75,8 +75,10 @@
 			<label class="col-md-3">Roster</label>
 		<div class="spacer"></div>
 			<div class="col-md-5">
-				<ul>
-					<li>Name 1 {{users}}</li>
+				<ul>{{#each users}}
+						<li>{{userId}}</li>
+					{{/each}}
+					<li>Name 1</li>
 					<li>Longer Name 2</li>
 					<li>Much much much much longer Name 3</li>
 				</ul>
