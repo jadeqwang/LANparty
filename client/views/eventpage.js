@@ -27,20 +27,11 @@ Template.rsvpItem.helpers({
 		};
 	},
 	myContributions: function(){
-		if (getMyUser(this._id).prob === 'definitely') {
-			return getMyUser(this._id).contribution.join("; ");
-		} else{
-			myNotes = getMyUser(this._id).contribution;
+		myNotes = getMyUser(this._id).contribution;
+		if (getMyUser(this._id).prob != 'definitely') {
 			myNotes.splice(0, 0, getMyUser(this._id).prob);
-			return myNotes.join("; ");
-			// myContributions = getMyUser(this._id).contribution.join("; ");
-			// myNotes = getMyUser(this._id).prob;
-			// myNotes = myNotes.concat(getMyUser(this._id).contribution);
-			// console.log(myNotes);
-			// return getMyUser(this._id).prob + '; ' + myContributions;
-			// return myNotes.join("; ");
-			// return myNotes.join("; ");
 		};
+		return myNotes.join("; ");
 	},
 	myComment: function(){
 		return getMyUser(this._id).comment;
