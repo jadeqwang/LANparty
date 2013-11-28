@@ -7,9 +7,11 @@ Meteor.subscribe('events');
 // done: 
 // X add to google calendar
 
-// create new template for ind'l user
-// iterate to display users for active event
-//  -> create collection from Meteor.users.find
+// x create new template for ind'l user
+// x iterate to display users for active event
+// x  -> create collection from Meteor.users.find
+// build contribution string
+
 // "add me" insert users into Event
 // admin view
 // Session.setDefault -- figure out what's going wrong there

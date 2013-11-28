@@ -32,18 +32,37 @@ Template.rsvpItem.helpers({
 		return this.profile.name;
 	},
 	myContributions: function(){
-		//
+		return getContributions(getMyUser(this._id));
 	},
 	myComment: function(){
 		return getMyUser(this._id).comment;
 	}
 })
 
+function getContributions(myUser){
+	var contribArray = new Array();
+	if (myUser.prob != 'definitely') {
+		contribArray[contribArray.length] = myUser.prob;
+	};
+	if (myUser.snacks) {
+		contribArray[contribArray.length] = 'snacks';
+	};
+	if (myUser.alcohol) {
+		contribArray[contribArray.length] = 'alcohol';
+	};
+	if (myUser.beer) {
+		contribArray[contribArray.length] = 'beer';
+	};
+	if (myUser.beverage) {
+		contribArray[contribArray.length] = 'beverages';
+	};
+	return contribArray.join("; ");
+}
+
 function getMyUser(myuserId){
 	var myusers   = myEvent().users;
 		for(var x = 0; x < myusers.length; x++){
 			if (myusers[x].userId === myuserId) {
-				console.log(myusers[x]);
 				return myusers[x];
 			};
 		}
@@ -64,7 +83,6 @@ Template.myModal.events({
     },
     "submit form":function(event){
         event.preventDefault();
-        //
         Session.set("showMyModal",false);
     }
 });
