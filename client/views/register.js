@@ -60,8 +60,12 @@ Template.register.helpers({
 		return dropdownSelect(visibility, getMyUser(Meteor.userId()).visible);
 	},
 	check: function(myContribution){ //if contribution is listed
-		if (getMyUser(Meteor.userId()).contribution.indexOf(myContribution) >= 0) {
-			return 'checked="checked"';
+		if (amRegistered) {
+			if (getMyUser(Meteor.userId()).contribution.indexOf(myContribution) >= 0) {
+				return 'checked="checked"';
+			} else{
+				return '';
+			};
 		} else{
 			return '';
 		};

@@ -2,6 +2,8 @@
 Meteor.subscribe('events');
 Meteor.subscribe("admin");
 
+// Session.setDefault('event-id', Events.findOne()._id);
+
 
 ///////////////////TODO///////////////////
 
@@ -14,10 +16,10 @@ Meteor.subscribe("admin");
 // x change ionicons to glyphicons to avoid console error message
 // x "add me" insert users into Event
 // x Registration: I am bringing [  ] guests.
-
 // x edit registration (add me disappears; edit button appears)
 
-// cancel registration button
+// fix Add Me
+// cancel registration button (delete element from array)
 // admin view 
 // approve: ( .glyphicon .glyphicon-check)(.glyphicon .glyphicon-unchecked)
 // delete (.glyphicon .glyphicon-trash) (user's registration or event)
@@ -43,7 +45,7 @@ Meteor.subscribe("admin");
 //     $('.datepicker').datepicker();
 // }
 
-Session.setDefault('event-id', getFirstEventId);
+// Session.setDefault('event-id', getFirstEventId);
 // for some reason, trying to set a default sets off a type error when
 // the same line works for Session.set. Worry about this later.
 
@@ -53,12 +55,12 @@ Session.setDefault('event-id', getFirstEventId);
 
 // had trouble with Session.setDefault, so we're setting it early
 // on the landing page
-Template.landingpage.rendered = function(){
+Template.landingpage.created = function(){
   Session.set('event-id', Events.findOne()._id);
 }
 // here too, in case they didn't come via the landing page
 // actually, no, it'll prevent the nextbtn from working b/c it keeps resetting
-Template.header.rendered = function(){ 
+Template.header.created = function(){ 
   if (typeof Session.get('event-id') != 'string') {
     Session.set('event-id', Events.findOne()._id);
   };
@@ -136,19 +138,26 @@ Router.map(function () {
   // the home page is "Yes" or "No page"
   this.route('home', {
     path: '/', // match the root path
-    template: 'landingpage'
+    template: 'landingpage',
+    // load: function () {
+    //   Session.set('event-id', Events.findOne()._id);
+    // },
   });
 
   // the registration form
-  this.route('register', {
-    path: '/register', // match the root path
-    template: 'registration'
-  });
+  // this.route('register', {
+  //   path: '/register', // match the root path
+  //   template: 'registration'
+  // });
 
   // the page with the roster, etc., also, admin page
   this.route('eventpage', {
     path: '/event',
-    template: 'eventpage'
+    template: 'eventpage',
+    load: function () {
+      Session.setDefault('event-id', getFirstEventId);
+      Session.set('event-id', Events.findOne()._id);
+    },
   });
 
 });
