@@ -48,7 +48,7 @@ function getUserIds(){
 		return myuserIds;
 }
 
-function getMyUser(myuserId){
+getMyUser = function(myuserId){
 	var myusers   = myEvent().users;
 		for(var x = 0; x < myusers.length; x++){
 			if (myusers[x].userId === myuserId) {
@@ -58,6 +58,9 @@ function getMyUser(myuserId){
 	return '';
 }
 
+amRegistered = function(){
+	return getMyUser(Meteor.userId()) != '';
+}
 
 ////////////////////Registration Modal////////////////////
 
@@ -81,29 +84,12 @@ Template.modalparent.helpers({
         return Session.get("showMyModal");
     },
     myRegistration: function() {
-	    return getMyUser(Meteor.userId()) != '';
+	    return amRegistered();
   	},
 });
 
 Template.modalparent.events({
     "click .show-modal-button":function(){
-        Session.set("showMyModal",true);
-    }
-});
-
-Template.modalparentedit.created=function(){
-    // this is necessary to initially set (and reset on future page load) the Session variable
-    Session.set("showMyModal",false);
-};
-
-Template.modalparentedit.helpers({
-    showMyModal:function(){
-        return Session.get("showMyModal");
-    }
-});
-
-Template.modalparentedit.events({
-    "click .show-modal-button": function(){
         Session.set("showMyModal",true);
     }
 });
