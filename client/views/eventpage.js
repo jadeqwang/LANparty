@@ -12,20 +12,10 @@ Template.roster.helpers({
 		return myEvent().users.length;
 	},
 	users: function(){
-		// myusers = Meteor.users.find({_id: {$in: getUserIds(myEvent().users)}},{multi: true});
-		// console.log(myusers);
 		return Meteor.users.find({_id: {$in: getUserIds()}},{multi: true});
 	},
 })
 
-function getUserIds(){
-	myusers = myEvent().users;
-	var myuserIds = new Array();
-		for(var x = 0; x < myusers.length; x++){
-			myuserIds[x] = myusers[x].userId;
-		}
-		return myuserIds;
-}
 
 Template.rsvpItem.helpers({
 	myName: function(){
@@ -38,6 +28,15 @@ Template.rsvpItem.helpers({
 		return getMyUser(this._id).comment;
 	}
 })
+
+function getUserIds(){
+	myusers = myEvent().users;
+	var myuserIds = new Array();
+		for(var x = 0; x < myusers.length; x++){
+			myuserIds[x] = myusers[x].userId;
+		}
+		return myuserIds;
+}
 
 function getContributions(myUser){
 	var contribArray = new Array();
