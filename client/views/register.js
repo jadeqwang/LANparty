@@ -21,21 +21,14 @@ Template.register.events({
 	      presence:      $(e.target).find('[name=attending]').val(),
 	    }
 
-		// console.log(myRegistration);
-		// if new registration
-		if (amRegistered()) {
-			console.log(myEvent().users);
-			myUsers = myEvent().users;
+		if (amRegistered()) { // if it's a revision
+			myUsers = myEvent().users; // update current user array
 			myUsers[getMyIndex(myRegistration.userId)] = myRegistration;
-			//update myUsers
+			console.log(myUsers);
 			Events.update(Session.get('event-id'), {$set: {users: myUsers}});
-			// Events.update(Session.get('event-id'), {$set: {users: myRegistration}});
-		} else{
+		} else{ // it's a new registration
 			Events.update(Session.get('event-id'), {$push: {users: myRegistration}});
 		};
-		// Events.update(Session.get('event-id'), {$push: {users: myRegistration}});
-		// else don't push; edit
-		// console.log(Events.find({}));
 	}
 });
 
@@ -48,7 +41,6 @@ Template.register.helpers({
 		};
 	},
 	comment: function(){
-		console.log(getMyUser(Meteor.userId()));
 		return getMyUser(Meteor.userId()).comment;
 	},
 	nguests: function(){
@@ -58,25 +50,14 @@ Template.register.helpers({
 			return "0";
 		};
 	},
-	presence: function(){
-		return getMyUser(Meteor.userId()).attending;
+	presence: function(myPresence){
+		return dropdownSelect(myPresence, getMyUser(Meteor.userId()).attending);
 	},
-	prob: function(){
-		return getMyUser(Meteor.userId()).prob;
+	prob: function(myProb){
+		return dropdownSelect(myProb, getMyUser(Meteor.userId()).prob);
 	},
-	visible: function(thisVisibility){
-		visibility = getMyUser(Meteor.userId()).visible;
-		console.log(visibility);
-		if (thisVisibility === visibility) {
-			return 'selected="selected"';
-		} else{
-			return '';
-		};
-
-		// actually, do this by registering a handlebars helper and pass in variables
-		// console.log(getMyUser(Meteor.userId()).visible);
-		// return getMyUser(Meteor.userId()).visible;
-		// return 'selected="selected"';
+	visible: function(visibility){
+		return dropdownSelect(visibility, getMyUser(Meteor.userId()).visible);
 	},
 	contributions: function(){
 		//
@@ -85,3 +66,11 @@ Template.register.helpers({
 	    return amRegistered();
   	},
 });
+
+function dropdownSelect(myOption, recordedOption){
+	if (myOption === recordedOption) {
+			return 'selected="selected"';
+		} else{
+			return '';
+		};
+}

@@ -34,15 +34,15 @@
      </div>
      <div class="col-md-3">
       <select id="probability" name="probability" class="form-control ">
-        <option>definitely</option>
-        <option>probably</option>
-        <option>maybe</option>
+        <option {{prob 'definitely'}}>definitely</option>
+        <option {{prob 'probably'}}>probably</option>
+        <option {{prob 'maybe'}}>maybe</option>
       </select>
     </div>
     <div class="col-md-3">
       <select id="attending" name="attending" class="form-control ">
-        <option>attending.</option>
-        <option>dropping by.</option>
+        <option {{presence 'attending.'}}>attending.</option>
+        <option {{presence 'dropping by.'}}>dropping by.</option>
       </select>
     </div>
   </div>
