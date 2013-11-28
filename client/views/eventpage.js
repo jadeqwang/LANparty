@@ -5,7 +5,11 @@ Template.eventdetails.helpers({
 	eventDate: function(){
 		return myDate();
 	},
+	admin: function(){
+		return admin();
+	},
 })
+
 
 Template.roster.helpers({
 	rsvps: function(){

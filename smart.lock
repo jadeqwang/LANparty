@@ -5,7 +5,8 @@
       "iron-router": {},
       "bootstrap-3": {},
       "ionicons": {},
-      "bootstrap-datepicker2": {}
+      "bootstrap-datepicker2": {},
+      "accounts-admin-ui": {}
     },
     "packages": {
       "iron-router": {
@@ -27,6 +28,26 @@
         "git": "https://github.com/deepwell/meteor-bootstrap-datepicker.git",
         "tag": "v1.2.0",
         "commit": "b7de18a7cc651ea665cda75048663f90d1a11d10"
+      },
+      "accounts-admin-ui": {
+        "git": "https://github.com/kenyee/meteor-accounts-admin-ui.git",
+        "tag": "v1.0.4",
+        "commit": "b9f81a3077cca1c4b5785978ad2240cc4e902f24"
+      },
+      "jquery-ui": {
+        "git": "https://github.com/TimHeckel/meteor-jquery-ui.git",
+        "tag": "v1.9.2",
+        "commit": "c437d45edcf1367df8d5ffa8bad2867758030bd2"
+      },
+      "jqbootstrapvalidation": {
+        "git": "https://github.com/nate-strauser/meteor-jqbootstrapvalidation.git",
+        "tag": "v0.1.0",
+        "commit": "2af4625d41a9b24311544a53790f14fa38c27b10"
+      },
+      "roles": {
+        "git": "https://github.com/alanning/meteor-roles.git",
+        "tag": "v1.0.6",
+        "commit": "f81cbf7c765a4ed7e16a580c288db6f10a90856b"
       }
     }
   }

@@ -2,9 +2,6 @@
 Meteor.subscribe('events');
 Meteor.subscribe("admin");
 
-// Session.setDefault('event-id', Events.findOne()._id);
-
-
 ///////////////////TODO///////////////////
 
 // done: 
@@ -18,15 +15,15 @@ Meteor.subscribe("admin");
 // x Registration: I am bringing [  ] guests.
 // x edit registration (add me disappears; edit button appears)
 // x fix Add Me
+// x cancel registration button (delete element from array)
 
-// cancel registration button (delete element from array)
 // admin view 
 // approve: ( .glyphicon .glyphicon-check)(.glyphicon .glyphicon-unchecked)
 // delete (.glyphicon .glyphicon-trash) (user's registration or event)
 // edit (.glyphicon .glyphicon-pencil)
 // add event; add n events; theme
 // Session.setDefault -- figure out what's going wrong there
-// modal doesn't work in firefox
+// nothing works in firefox (maybe proxy?)
 // make gcal correct event (depend on session)
 
 // remove autopublish+insecure

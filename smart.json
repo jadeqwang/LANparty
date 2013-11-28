@@ -3,6 +3,7 @@
     "iron-router": {},
     "bootstrap-3": {},
     "ionicons": {},
-    "bootstrap-datepicker2": {}
+    "bootstrap-datepicker2": {},
+    "accounts-admin-ui": {}
   }
 }

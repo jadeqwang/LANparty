@@ -3,7 +3,8 @@ var admin = function () {
            Meteor.user().emails &&
            (Meteor.user().emails[0].address == "kenton@kentonshouse.com" ||
            Meteor.user().emails[0].address == "jade@kentonshouse.com" ||
-           Admin.findOne({admin: Meteor.user().emails[0].address}));
+           Admin.findOne({admin: Meteor.user().emails[0].address})||
+           Admin.findOne({admin: Meteor.user().services.github.email}));
 }
 
 if (Meteor.isServer) {
@@ -14,5 +15,6 @@ if (Meteor.isServer) {
 	Meteor.startup(function() {
 	   Admin.insert({admin: "kenton@kentonshouse.com"});
 	   Admin.insert({admin: "jade@kentonshouse.com"});
+	   Admin.insert({admin: "jade@meteor.com"});
 	 });
 };
