@@ -43,29 +43,6 @@ function getUserIds(){
 		return myuserIds;
 }
 
-function getContributions(myUser){
-	var contribArray = new Array();
-	if (myUser.prob != 'definitely') {
-		contribArray[contribArray.length] = myUser.prob;
-	};
-	if (myUser.snacks) {
-		contribArray[contribArray.length] = 'snacks';
-	};
-	if (myUser.cash) {
-		contribArray[contribArray.length] = 'cash';
-	};
-	if (myUser.alcohol) {
-		contribArray[contribArray.length] = 'alcohol';
-	};
-	if (myUser.beer) {
-		contribArray[contribArray.length] = 'beer';
-	};
-	if (myUser.beverage) {
-		contribArray[contribArray.length] = 'beverages';
-	};
-	return contribArray.join("; ");
-}
-
 function getMyUser(myuserId){
 	var myusers   = myEvent().users;
 		for(var x = 0; x < myusers.length; x++){
