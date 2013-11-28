@@ -16,11 +16,6 @@ Template.roster.helpers({
 		console.log(myusers);
 		return Meteor.users.find({_id: {$in: getUserIds(myEvent().users)}},{multi: true});
 	},
-	userId: function(){
-		// return this.userId;
-		console.log(this);
-		return this.profile.name;
-	},
 })
 
 function getUserIds(myusers){
