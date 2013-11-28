@@ -11,11 +11,10 @@ Meteor.subscribe('events');
 // x  -> create collection from Meteor.users.find
 // x build contribution string
 // x change ionicons to glyphicons to avoid console error message
+// x "add me" insert users into Event
+// x Registration: I am bringing [  ] guests.
 
-
-
-// "add me" insert users into Event
-// Registration: I am bringing [  ] guests.
+// edit registration (add me disappears; edit button appears)
 // admin view 
 // approve: ( .glyphicon .glyphicon-check)(.glyphicon .glyphicon-unchecked)
 // delete (.glyphicon .glyphicon-trash) (user's registration or event)
