@@ -60,16 +60,12 @@ Template.register.helpers({
 		return dropdownSelect(visibility, getMyUser(Meteor.userId()).visible);
 	},
 	check: function(thisContribution){ //if contribution is listed
-		myContribution = getMyUser(Meteor.userId()).contribution;
-		if (myContribution === undefined) {
-			return '';
-		} else{
-			if (myContribution.indexOf(thisContribution) >= 0) {
+		if (getMyUser(Meteor.userId()).contribution != undefined) {
+			if (getMyUser(Meteor.userId()).contribution.indexOf(thisContribution) >= 0) {
 				return 'checked="checked"';
-			} else{
-				return '';
 			};
 		};
+		return '';
 	},
 	myRegistration: function() {
 	    return amRegistered();
