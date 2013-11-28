@@ -85,7 +85,11 @@ Template.myModal.events({
     "submit form":function(event){
         event.preventDefault();
         Session.set("showMyModal",false);
-    }
+    },
+    "delete form":function(event){
+        event.preventDefault();
+        Session.set("showMyModal",false);
+    },
 });
 
 Template.modalparent.created=function(){
