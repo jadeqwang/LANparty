@@ -124,13 +124,18 @@
     {{#if showMyModal}}
         {{> myModal}}
     {{/if}}
-    <button class="show-modal-button btn btn-success btn-lg addmebtn"><span class="glyphicon glyphicon-plus"></span> Add me</button>
+    {{#if myRegistration}}
+    	<button class="show-modal-button btn btn-success btn-lg addmebtn"><span class="glyphicon glyphicon-pencil"></span> Edit my Registration</button>
+    {{else}}
+		<button class="show-modal-button btn btn-success btn-lg addmebtn"><span class="glyphicon glyphicon-plus"></span> Add me</button>
+	{{/if}}
 </template>
 
 <template name="modalparentedit"> 
 	{{#if showMyModal}}
         {{> myModal}}
     {{/if}}
+
     <span class="icon-green"><a href="#" class="show-modal-button"><span class="glyphicon glyphicon-pencil"></span></a></span>
 	<button class="show-modal-button btn btn-link btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
 </template>

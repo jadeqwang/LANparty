@@ -55,7 +55,7 @@ function getMyUser(myuserId){
 				return myusers[x];
 			};
 		}
-	return 'user not found';
+	return '';
 }
 
 
@@ -79,7 +79,10 @@ Template.modalparent.created=function(){
 Template.modalparent.helpers({
     showMyModal:function(){
         return Session.get("showMyModal");
-    }
+    },
+    myRegistration: function() {
+	    return getMyUser(Meteor.userId()) != '';
+  	},
 });
 
 Template.modalparent.events({
