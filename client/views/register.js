@@ -6,17 +6,15 @@ Template.register.events({
 		var user = Meteor.user();
 		var myUsers = myEvent().users;
 
-		var deleteMe = $(e.target).find('[name=delete]').val();
-		console.log(deleteMe);
-
-		//if deletion is needed
-		if (deleteMe === 'delete') {
+		// if delete checkbox is checked
+		if ($(e.target).find('[name=delete]').val() === 'delete') {
 			myUsers.splice(getMyIndex(user._id), 1);
 			console.log(myUsers);
 			Events.update(Session.get('event-id'), {$set: {users: myUsers}});
 			return;
 		};
 
+		// create array of contributions
 		var contributions = [];
 	    $('input[name=contribution]:checked').each(function() {
 	      contributions.push($(this).val());
@@ -36,22 +34,11 @@ Template.register.events({
 
 		if (amRegistered()) { // if it's a revision, update current user array
 			myUsers[getMyIndex(myRegistration.userId)] = myRegistration;
-			console.log(myUsers);
 			Events.update(Session.get('event-id'), {$set: {users: myUsers}});
 		} else{ // it's a new registration
 			Events.update(Session.get('event-id'), {$push: {users: myRegistration}});
 		};
 	},
-	// 'delete form': function (e, template) { // cancels registration
-	// 	e.preventDefault();
-	// 	console.log('delete form');
-
-	// 	var myUsers = myEvent().users;
-	// 	// console.log(getMyIndex(myRegistration.userId));
-	// 	// myUsers.splice(getMyIndex(myRegistration.userId), 1);
-	// 	// console.log(myUsers);
-	// 	// Events.update(Session.get('event-id'), {$set: {users: myUsers}});
-	// },
 });
 
 Template.register.helpers({
