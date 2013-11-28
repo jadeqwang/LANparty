@@ -6,14 +6,20 @@ Meteor.subscribe('events');
 
 // done: 
 // X add to google calendar
-
 // x create new template for ind'l user
 // x iterate to display users for active event
 // x  -> create collection from Meteor.users.find
-// build contribution string
+// x build contribution string
+// x change ionicons to glyphicons to avoid console error message
+
+
 
 // "add me" insert users into Event
-// admin view
+// admin view 
+// approve: ( .glyphicon .glyphicon-check)(.glyphicon .glyphicon-unchecked)
+// delete (.glyphicon .glyphicon-trash) (user's registration or event)
+// edit (.glyphicon .glyphicon-pencil)
+// add event; add n events; theme
 // Session.setDefault -- figure out what's going wrong there
 // modal doesn't work in firefox
 // make gcal correct event (depend on session)
@@ -23,7 +29,7 @@ Meteor.subscribe('events');
 // add 2-4 events ahead; ability for admin to edit;
 
 // nice to haves:
-// change ionicons to glyphicons to avoid console error message
+
 // datepicker
 // accounts-google
 // gcal integration to add events
