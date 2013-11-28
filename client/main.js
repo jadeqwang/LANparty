@@ -1,5 +1,6 @@
 // subscriptions to Events collection
 Meteor.subscribe('events');
+Meteor.subscribe("admin");
 
 
 ///////////////////TODO///////////////////
