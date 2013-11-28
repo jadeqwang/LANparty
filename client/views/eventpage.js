@@ -18,14 +18,16 @@ Template.roster.helpers({
 
 
 Template.rsvpItem.helpers({
-	myName: function(){
-		//TODO: get user name from registration
-		// return this if username blank
-		return this.profile.name;
+	myName: function(){ // returns the user-entered name
+		myName = getMyUser(this._id).name;
+		if (myName != undefined) {
+			return myName;
+		} else{         // or the name from the userID
+			return this.profile.name;
+		};
 	},
 	myContributions: function(){
 		return getMyUser(this._id).contribution.join("; ");
-		// return getContributions(getMyUser(this._id));
 	},
 	myComment: function(){
 		return getMyUser(this._id).comment;

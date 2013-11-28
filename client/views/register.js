@@ -9,8 +9,6 @@ Template.register.events({
 	      contributions.push($(this).val());
 	    });
 
-	    // console.log(contributions);
-
 		//build the registration from its parts
 		var myRegistration = {
 	      userId: user._id,
@@ -23,9 +21,9 @@ Template.register.events({
 	      presence:      $(e.target).find('[name=attending]').val(),
 	    }
 
-		console.log(myRegistration);
-		//Events.update(eventId, {blah blah});
-		//insert the user into the event
+		// console.log(myRegistration);
+		Events.update(Session.get('event-id'), {$push: {users: myRegistration}});
+		// console.log(Events.find({}));
 	}
 });
 
