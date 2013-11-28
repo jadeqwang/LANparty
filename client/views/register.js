@@ -59,8 +59,12 @@ Template.register.helpers({
 	visible: function(visibility){
 		return dropdownSelect(visibility, getMyUser(Meteor.userId()).visible);
 	},
-	contributions: function(){
-		//
+	check: function(myContribution){ //if contribution is listed
+		if (getMyUser(Meteor.userId()).contribution.indexOf(myContribution) >= 0) {
+			return 'checked="checked"';
+		} else{
+			return '';
+		};
 	},
 	myRegistration: function() {
 	    return amRegistered();
