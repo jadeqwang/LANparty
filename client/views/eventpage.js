@@ -58,6 +58,16 @@ getMyUser = function(myuserId){
 	return '';
 }
 
+getMyIndex = function(myuserId){
+	var myusers   = myEvent().users;
+		for(var x = 0; x < myusers.length; x++){
+			if (myusers[x].userId === myuserId) {
+				return x;
+			};
+		}
+	return '';
+}
+
 amRegistered = function(){
 	return getMyUser(Meteor.userId()) != '';
 }

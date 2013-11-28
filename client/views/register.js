@@ -22,15 +22,66 @@ Template.register.events({
 	    }
 
 		// console.log(myRegistration);
-		Events.update(Session.get('event-id'), {$push: {users: myRegistration}});
+		// if new registration
+		if (amRegistered()) {
+			console.log(myEvent().users);
+			myUsers = myEvent().users;
+			myUsers[getMyIndex(myRegistration.userId)] = myRegistration;
+			//update myUsers
+			Events.update(Session.get('event-id'), {$set: {users: myUsers}});
+			// Events.update(Session.get('event-id'), {$set: {users: myRegistration}});
+		} else{
+			Events.update(Session.get('event-id'), {$push: {users: myRegistration}});
+		};
+		// Events.update(Session.get('event-id'), {$push: {users: myRegistration}});
+		// else don't push; edit
 		// console.log(Events.find({}));
 	}
 });
 
 Template.register.helpers({
 	yourname: function() {
-		var user = Meteor.user();
-		console.log(user.profile.name);
-		return user.profile.name;
-	}
+		if (amRegistered()) {
+			return getMyUser(Meteor.userId()).name;
+		} else{
+			return Meteor.user().profile.name;
+		};
+	},
+	comment: function(){
+		console.log(getMyUser(Meteor.userId()));
+		return getMyUser(Meteor.userId()).comment;
+	},
+	nguests: function(){
+		if (amRegistered()) {
+			return getMyUser(Meteor.userId()).nguests;
+		} else{
+			return "0";
+		};
+	},
+	presence: function(){
+		return getMyUser(Meteor.userId()).attending;
+	},
+	prob: function(){
+		return getMyUser(Meteor.userId()).prob;
+	},
+	visible: function(thisVisibility){
+		visibility = getMyUser(Meteor.userId()).visible;
+		console.log(visibility);
+		if (thisVisibility === visibility) {
+			return 'selected="selected"';
+		} else{
+			return '';
+		};
+
+		// actually, do this by registering a handlebars helper and pass in variables
+		// console.log(getMyUser(Meteor.userId()).visible);
+		// return getMyUser(Meteor.userId()).visible;
+		// return 'selected="selected"';
+	},
+	contributions: function(){
+		//
+	},
+	myRegistration: function() {
+	    return amRegistered();
+  	},
 });

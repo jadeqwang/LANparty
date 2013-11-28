@@ -56,7 +56,7 @@
        <label class="col-md-4 control-label" for="probability">I am bringing</label> 
     </div>
      <div class="col-md-1">
-      <input name="nguests" type="number" value="0" min="0" max="5" autofocus="autofocus"/>
+      <input name="nguests" type="number" value="{{nguests}}" min="0" max="5" autofocus="autofocus"/>
     </div>
     <label class="col-md-1 control-label"></label>
     <div>
@@ -72,9 +72,9 @@
     <label class="col-md-5 control-label" for="visible">Show me on roster?</label>
     <div class="col-md-5">
       <select id="visible" name="visible" class="form-control ">
-        <option>Only to approved guests</option>
-        <option>Yes, to everyone</option>
-        <option>Only to Kenton</option>
+        <option {{visible 'Only to approved guests'}}>Only to approved guests</option>
+        <option {{visible 'Yes, to everyone'}}>Yes, to everyone</option>
+        <option {{visible 'Only to Kenton'}}>Only to Kenton</option>
       </select>
     </div>
   </div>
@@ -135,27 +135,28 @@
       <label class="col-md-3 control-label" for="comments">Comments</label>
     </div>
     <div class="col-md-7">
-      <textarea id="comments" name="comments" class="form-control " rows="4" placeholder="(e.g., game requests) Comments will appear under your name on the roster."></textarea>
+      <textarea id="comments" name="comments" class="form-control " rows="4" placeholder="(e.g., game requests) Comments will appear under your name on the roster.">{{comment}}</textarea>
     </div>
   </div>
 
   <div class="spacer"></div>
-
-  <!-- Register Button -->
-  <div class="form-group">
-    <label class="col-md-2 control-label" for="visible"></label>
-    <div class="col-md-8">
-      <input type="submit" value="Register" class="btn btn-success btn-lg btn-block"/> 
+  {{#if myRegistration}}
+    <!-- Revise Button -->
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="visible"></label>
+      <div class="col-md-8">
+        <input type="submit" value="Revise Registration" class="btn btn-success btn-lg btn-block"/> 
+      </div>
     </div>
-  </div>
-
-  <!-- Revise Button -->
-  <div class="form-group">
-    <label class="col-md-2 control-label" for="visible"></label>
-    <div class="col-md-8">
-      <input type="submit" value="Revise Registration" class="btn btn-success btn-lg btn-block"/> 
+  {{else}}
+    <!-- Register Button -->
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="visible"></label>
+      <div class="col-md-8">
+        <input type="submit" value="Register" class="btn btn-success btn-lg btn-block"/> 
+      </div>
     </div>
-  </div>
+  {{/if}}
 
   </fieldset>
   </form>
