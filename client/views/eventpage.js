@@ -19,15 +19,20 @@ Template.roster.helpers({
 
 Template.rsvpItem.helpers({
 	myName: function(){
+		//TODO: get user name from registration
+		// return this if username blank
 		return this.profile.name;
 	},
 	myContributions: function(){
-		return getContributions(getMyUser(this._id));
+		return getMyUser(this._id).contribution.join("; ");
+		// return getContributions(getMyUser(this._id));
 	},
 	myComment: function(){
 		return getMyUser(this._id).comment;
 	}
 })
+
+////////////////////Helpers for helpers////////////////////
 
 function getUserIds(){
 	myusers = myEvent().users;
@@ -45,6 +50,9 @@ function getContributions(myUser){
 	};
 	if (myUser.snacks) {
 		contribArray[contribArray.length] = 'snacks';
+	};
+	if (myUser.cash) {
+		contribArray[contribArray.length] = 'cash';
 	};
 	if (myUser.alcohol) {
 		contribArray[contribArray.length] = 'alcohol';
@@ -68,13 +76,8 @@ function getMyUser(myuserId){
 	return 'user not found';
 }
 
-//mongo selector
-//// Matches documents where fruit is one of three possibilities
-//{fruit: {$in: ["peach", "plum", "pear"]}}
 
-
-
-/////////////Registration Modal////////////////////
+////////////////////Registration Modal////////////////////
 
 Template.myModal.events({
     "click .close, click .cancel":function(){

@@ -47,6 +47,22 @@
     </div>
   </div>
 
+  <div class="spacer"></div>
+  <!-- I am bringing ___ guests -->
+
+  <div class="form-group required-control">
+    <label class="col-md-1 control-label"></label>
+    <div>
+       <label class="col-md-4 control-label" for="probability">I am bringing</label> 
+    </div>
+     <div class="col-md-1">
+      <input name="nguests" type="number" value="0" min="0" max="5" autofocus="autofocus"/>
+    </div>
+    <label class="col-md-1 control-label"></label>
+    <div>
+       <label class="col-md-2 control-label" for="probability">guests.</label> 
+    </div>
+  </div>
 
   <div class="spacer"></div>
 
@@ -87,21 +103,21 @@
       
       <div class="checkbox">
       <label for="contribution-2">
-        <input type="checkbox" name="contribution" id="contribution-2" value="alcohol (of the !beer variety)">
+        <input type="checkbox" name="contribution" id="contribution-2" value="alcohol">
         alcohol (of the !beer variety)
       </label>
       </div>
       
       <div class="checkbox">
       <label for="contribution-3">
-        <input type="checkbox" name="contribution" id="contribution-3" value="beer (if you drink it yourself)">
+        <input type="checkbox" name="contribution" id="contribution-3" value="beer">
         beer (if you drink it yourself)
       </label>
       </div>
       
       <div class="checkbox">
       <label for="contribution-4">
-        <input type="checkbox" name="contribution" id="contribution-4" value="$10">
+        <input type="checkbox" name="contribution" id="contribution-4" value="cash">
         $10
       </label>
       </div>
@@ -129,7 +145,7 @@
   <div class="form-group">
     <label class="col-md-2 control-label" for="visible"></label>
     <div class="col-md-8">
-      <button type="button" class="btn btn-success btn-lg btn-block">Register</button>
+      <input type="submit" value="Register" class="btn btn-success btn-lg btn-block"/> 
     </div>
   </div>
 

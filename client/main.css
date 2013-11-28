@@ -85,6 +85,7 @@ html {
 .invisible {
 	opacity: 0;
 }
+
 .register-container{
 	max-width: 765px;
 	min-height: 440px;
@@ -93,9 +94,7 @@ html {
 	border-radius: 25px;
 	padding: 30px 10px 30px 10px;
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
-} /*.legend{
-	border-bottom-color: #607587;
-}*/
+} 
 
 .gcalbutton{
 	padding-left: 60px;

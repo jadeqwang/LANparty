@@ -2,9 +2,28 @@ Template.register.events({
 	'submit form': function (e, template) {
 		e.preventDefault();
 
-		//build the registration from its parts
-		var $comments = $(e.target).find(['name=comments']);
+		var user = Meteor.user();
 
+		var contributions = [];
+	    $('input[name=contribution]:checked').each(function() {
+	      contributions.push($(this).val());
+	    });
+
+	    // console.log(contributions);
+
+		//build the registration from its parts
+		var myRegistration = {
+	      userId: user._id,
+	      name:          $(e.target).find('[name=guestname]').val(),
+	      comment:       $(e.target).find('[name=comments]').val(),
+	      nguests:       $(e.target).find('[name=nguests]').val(),
+	      contribution:  contributions,
+	      visible:       $(e.target).find('[name=visible]').val(),
+	      prob:          $(e.target).find('[name=probability]').val(),
+	      presence:      $(e.target).find('[name=attending]').val(),
+	    }
+
+		console.log(myRegistration);
 		//Events.update(eventId, {blah blah});
 		//insert the user into the event
 	}

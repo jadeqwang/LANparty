@@ -15,6 +15,7 @@ Meteor.subscribe('events');
 
 
 // "add me" insert users into Event
+// Registration: I am bringing [  ] guests.
 // admin view 
 // approve: ( .glyphicon .glyphicon-check)(.glyphicon .glyphicon-unchecked)
 // delete (.glyphicon .glyphicon-trash) (user's registration or event)
