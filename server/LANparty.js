@@ -13,8 +13,14 @@ if (Meteor.isServer) {
 	});
 
 	Meteor.startup(function() {
-	   Admin.insert({admin: "kenton@kentonshouse.com"});
-	   Admin.insert({admin: "jade@kentonshouse.com"});
-	   Admin.insert({admin: "jade@meteor.com"});
+		createUserAdminRoles();
+
+		//find _id of admins and add them if they're not already there
+		//Roles.addUsersToRoles("xxx", ["admin", "user-admin"]);
+
+
+	   // Admin.insert({admin: "kenton@kentonshouse.com"});
+	   // Admin.insert({admin: "jade@kentonshouse.com"});
+	   // Admin.insert({admin: "jade@meteor.com"});
 	 });
 };
