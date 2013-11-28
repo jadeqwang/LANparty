@@ -77,7 +77,7 @@
 	<div class="rightcolumn">
 			<label class="col-md-3">Roster</label>
 		<div class="spacer"></div>
-			<div class="col-md-5">
+			<div class="col-md-7">
 				<ul>{{#each users}}
 						<li>{{> rsvpItem}}</li>
 					{{/each}}
@@ -92,7 +92,7 @@
 <template name="rsvpItem"> 
 	<li>
 		<span class="rosternames">{{myName}}</span>
-		<span class="contributions">{{myContributions}}</span>
+		<span class="contributions"> ({{myContributions}})</span>
 		<p class="myComment">{{myComment}}</p>
 	</li>
 </template>

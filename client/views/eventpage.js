@@ -29,18 +29,13 @@ function getUserIds(){
 
 Template.rsvpItem.helpers({
 	myName: function(){
-		// console.log(this);
 		return this.profile.name;
 	},
 	myContributions: function(){
 		//
 	},
 	myComment: function(){
-		// console.log(getMyUser(this._id));
-		// console.log('this._id');
-		// console.log(this._id);
 		return getMyUser(this._id).comment;
-		// return obj.comment;
 	}
 })
 
@@ -48,6 +43,7 @@ function getMyUser(myuserId){
 	var myusers   = myEvent().users;
 		for(var x = 0; x < myusers.length; x++){
 			if (myusers[x].userId === myuserId) {
+				console.log(myusers[x]);
 				return myusers[x];
 			};
 		}
