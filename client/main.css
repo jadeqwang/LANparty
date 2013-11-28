@@ -9,10 +9,7 @@
 }
 
 body { 
-    /*background: #88e; /*maybe #abe*/
-    /*background: #689;*/
     background: #607587;
-    /*background: #fff;*/
     color: #222;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 100;
@@ -20,7 +17,6 @@ body {
 }
 
 html { 
-    /*background: url('/IMG_20111204_122722 (1).jpg') no-repeat center center fixed; */
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -78,6 +74,16 @@ html {
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
 }
 
+.icon-green a:link{
+	color: #51a351;
+} .icon-green a:visited{
+	color: #51a351;
+} .icon-green a:hover {
+	color: #62c462;
+} .icon-green a:active{
+	color: #62c462;
+}
+
 .checkbox {
 	text-align: left;
 }
@@ -100,7 +106,7 @@ html {
 	padding-left: 60px;
 	padding-bottom: 20px;
 }
-.show-modal-button{
+.addmebtn{
 	margin-top: 10px;
 	margin-bottom: 30px;
 }

@@ -31,7 +31,10 @@ Template.rsvpItem.helpers({
 	},
 	myComment: function(){
 		return getMyUser(this._id).comment;
-	}
+	},
+	myRegistration: function() {
+	    return this._id === Meteor.userId();
+  	},
 })
 
 ////////////////////Helpers for helpers////////////////////
@@ -81,6 +84,23 @@ Template.modalparent.helpers({
 
 Template.modalparent.events({
     "click .show-modal-button":function(){
+        Session.set("showMyModal",true);
+    }
+});
+
+Template.modalparentedit.created=function(){
+    // this is necessary to initially set (and reset on future page load) the Session variable
+    Session.set("showMyModal",false);
+};
+
+Template.modalparentedit.helpers({
+    showMyModal:function(){
+        return Session.get("showMyModal");
+    }
+});
+
+Template.modalparentedit.events({
+    "click .show-modal-button": function(){
         Session.set("showMyModal",true);
     }
 });

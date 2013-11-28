@@ -9,10 +9,10 @@ var admin = function () {
 if (Meteor.isServer) {
   	Meteor.publish("admin", function () {
     	return Admin.find();
-	}
-};
+	});
 
-Meteor.startup(function() {
-   Admin.insert({admin: "kenton@kentonshouse.com"});
-   Admin.insert({admin: "jade@kentonshouse.com"});
- });
+	Meteor.startup(function() {
+	   Admin.insert({admin: "kenton@kentonshouse.com"});
+	   Admin.insert({admin: "jade@kentonshouse.com"});
+	 });
+};

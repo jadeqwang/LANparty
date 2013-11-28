@@ -79,7 +79,7 @@
 		<div class="spacer"></div>
 			<div class="col-md-7">
 				<ul>{{#each users}}
-						<li>{{> rsvpItem}}</li>
+						{{> rsvpItem}}
 					{{/each}}
 				</ul>
 			</div>
@@ -90,7 +90,9 @@
 </template>
 
 <template name="rsvpItem"> 
-	<li>
+	<li>{{#if myRegistration}}
+			{{> modalparentedit}}
+		{{/if}}
 		<span class="rosternames">{{myName}}</span>
 		<span class="contributions"> ({{myContributions}})</span>
 		<p class="myComment">{{myComment}}</p>
@@ -122,7 +124,13 @@
     {{#if showMyModal}}
         {{> myModal}}
     {{/if}}
-    <button class="show-modal-button btn btn-success btn-lg"><span class="glyphicon glyphicon-plus"></span> Add me</button>
+    <button class="show-modal-button btn btn-success btn-lg addmebtn"><span class="glyphicon glyphicon-plus"></span> Add me</button>
 </template>
 
-
+<template name="modalparentedit"> 
+	{{#if showMyModal}}
+        {{> myModal}}
+    {{/if}}
+    <span class="icon-green"><a href="#" class="show-modal-button"><span class="glyphicon glyphicon-pencil"></span></a></span>
+	<button class="show-modal-button btn btn-link btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
+</template>
