@@ -15,7 +15,9 @@ Meteor.subscribe("admin");
 // x "add me" insert users into Event
 // x Registration: I am bringing [  ] guests.
 
-// edit registration (add me disappears; edit button appears)
+// x edit registration (add me disappears; edit button appears)
+
+// cancel registration button
 // admin view 
 // approve: ( .glyphicon .glyphicon-check)(.glyphicon .glyphicon-unchecked)
 // delete (.glyphicon .glyphicon-trash) (user's registration or event)
